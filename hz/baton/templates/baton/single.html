@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Продукт{% endblock %}
+
+{% block content %}
+
+<!-- single product -->
+<div class="single-product mt-150 mb-150">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="single-product-img">
+					<img src="{{ product.photo.url }}" alt="">
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div class="single-product-content">
+					<h3>{{ product.title }}</h3>
+					<p><strong>Категория : </strong>{{ product.category }}</p>
+					<p class="single-product-pricing">{{ product.price }} ₽</p>
+					<p> {{ product.content|safe }}</p>
+					<div class="single-product-form">
+
+						<form action="{% url 'cart:cart_add' product.id %}" method="post">
+							{{ cart_product_form }}
+							{% csrf_token %}
+							<input type="submit" class="cart-btn" value="В корзину">
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- end single product -->
+
+<!-- description -->
+	<div class="tabs">
+
+		<div id="tabs" class="container">
+
+			<div class="tabs__nav">
+				<a href="#tab_1" class="tabs__nav-btn active" data-tab="0">Cостав</a>
+				<a href="#tab_2" class="tabs__nav-btn" data-tab="1">Пищевая ценность</a>
+				<a href="#tab_3" class="tabs__nav-btn" data-tab="2">Условия хранения</a>
+				<a href="#tab_4" class="tabs__nav-btn" data-tab="3">Доставка и оплата </a>
+			</div>
+
+			<div class="tabs__content">
+
+				<div class="product-tabs__item row" id="tab_1">
+					<h3 class="tabs__item-subtitle col-lg-3">Состав</h3>
+					<div class="tabs__item-text col-lg">
+						<div class="col-lg  description-product__text show-more-text show-more-text--numenclature">
+							<p>{{ product.structure|safe }}</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-tabs__item row" id="tab_2">
+					<h3 class="tabs__item-subtitle col-lg-3">Пищевая ценность</h3>
+					<div class="tabs__item-text col-lg">
+						<div class="col-lg  description-product__text show-more-text show-more-text--numenclature">
+							<p>{{ product.value|safe }}</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-tabs__item row" id="tab_3">
+					<h3 class="tabs__item-subtitle col-lg-3">Условия хранения</h3>
+					<div class="tabs__item-text col-lg">
+						<div class="col-lg  description-product__text show-more-text show-more-text--numenclature">
+							<p>{{ product.storage|safe }}</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-tabs__item row" id="tab_4">
+					<h3 class="tabs__item-subtitle col-lg-3"
+						id="item-description">Доставка и оплата</h3>
+					<div class="tabs__item-text col-lg">
+						<div class="col-lg  description-product__text show-more-text show-more-text--numenclature">
+							<p>Бесплатная доставка курьером по Москве.
+								Доставка курьером за МКАД 300 руб. +10 руб./км от МКАД.
+								Доставка по всей России курьером почты России.
+								При заказе шоубокса (24 шт.) доставка бесплатная.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- end description -->
+
+<!-- shop button -->
+	<div class="more-products mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">
+						<div class="text-bg">
+							<div align="center"><a href="{% url 'shop' %}">Вернуться в магазин</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end shop button -->
+
+{% endblock %}

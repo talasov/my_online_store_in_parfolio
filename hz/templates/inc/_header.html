@@ -1,0 +1,64 @@
+{% load static %}
+
+<!-- loader  -->
+<div class="loader_bg">
+    <div class="loader"><img src="{% static 'images/loading.gif' %}" alt="#"/></div>
+</div>
+<!-- end loader -->
+
+<!-- header -logo-->
+<div class="header-top">
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-2 col-lg-4 col-md-4 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <div class="images_box4">
+                                    <figure><a href="{% url 'home' %}"><img
+                                            src="{% static 'img/logo2.png' %}"></a></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-10 col-lg-8 col-md-8 col-sm-9">
+<!-- end header logo -->
+
+<!-- header inner -->
+                    <div class="menu-area">
+                        <div class="limit-box">
+                            <nav class="main-menu ">
+                                <ul class="menu-area-main">
+                                    <li class="active"><a href="{% url 'home' %}">Главная</a></li>
+                                    <li><a href="{% url 'shop' %}">Магазин</a></li>
+                                    <li><a href="{% url 'feedback' %}">Обратная связь</a></li>
+                                    {% if request.user.is_authenticated %}
+                                    <li><a href="{% url 'logout' %}">Выйти</a></li>
+                                    {% else %}
+                                    <li><a href="{% url 'register' %}">Регистрация</a></li>
+                                    <li><a href="{% url 'login' %}">Войти</a></li>
+                                    {% endif %}
+                                    <li class="cart">
+                                        {% with total_items=cart|length %}
+                                        {% if cart|length > 0 %}
+                                        <a href="{% url 'cart:cart_detail' %}">
+                                            В корзине:{{ cart.get_total_price }} ₽
+                                        </a>
+                                        {% else %}
+                                        <a href="{% url 'cart:cart_detail' %}"> </a>
+                                        {% endif %}
+                                        {% endwith %}
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end header inner -->

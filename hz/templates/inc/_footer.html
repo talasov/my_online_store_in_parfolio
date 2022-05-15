@@ -1,0 +1,85 @@
+{% load static %}
+
+<!--  footer -->
+
+<footer>
+
+  <div class="footer ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="images_box3">
+            <figure><a href="{% url 'home' %}"><img src="{% static 'img/logo2.png' %}"></a></figure>
+          </div>
+
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+            <div class="row">
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 ">
+                <div class="address">
+                  <h3>Адрес </h3>
+                  <ul class="loca">
+                    <li>
+                      <a href="#"></a>115191,
+                      <br>г.Москва, Духовской пер.,д.17, стр.10, а/я 30
+                    </li>
+                    <li>
+                      <a href="#"></a>8(800)555-19-34
+                    </li>
+                    <li>
+                      <a href="#"></a>info@gdehoroshiyprodukt.ru
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="address">
+                  <h3>О нас</h3>
+                  <ul class="Menu_footer">
+                    <li><a href="#" class="open-popup">Оплата и доставка</a></li>
+                    <li><a href="{% url 'certificate' %}" target="_blank" rel="noopener noreferrer">Сертификаты качества</a></li>
+                    <li><a href="{% url 'contract' %}" target="_blank" rel="noopener noreferrer">Договор оферты</a></li>
+                    <li><a href="{% url 'privacy_policy' %}" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-sm-6 ">
+                <div class="address">
+                  <h3>Обратная связь</h3>
+                  <ul class="Menu_footer">
+                    <li><a href="{% url 'feedback' %}">Написать нам</a></li>
+                    <li><a href="#">ВКонтакте</a></li>
+                    <li><a href="#">Телеграмм</a></li>
+                    <li><a href="#">Инстаграм</a></li>
+                    </ul>
+
+                  <div class="popup__bg">
+                    <form class="popup">
+                      <svg class="close-popup" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="#2982ff" d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                      </svg>
+                      <label>
+                        <img src="{% static 'img/delivery.jpg' %}" alt="">
+                      </label>
+                    </form>
+                  </div>
+                </div>
+                <script src="{% static 'js/main.js' %}"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <div class="container">
+        <p>ООО «Где Хороший Продукт?» ИНН 9731035830 </p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</footer>
+<!--  end footer -->

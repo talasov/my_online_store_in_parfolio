@@ -1,0 +1,8 @@
+<div class="product-filters">
+                    <ul>
+                        <li><a href="{% url 'shop' %}">Всё</a></li>
+                        {% for item in categories %}
+                        <li><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>

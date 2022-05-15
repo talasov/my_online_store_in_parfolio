@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Сертификат качества{% endblock %}
+
+{% block content %}
+
+<!--certificate-->
+
+<div class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2><strong class="llow">Сертификат качества</strong></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img src="{% static 'img/certificate.jpg' %}" alt="Сертификат">
+        </div>
+    </div>
+</div>
+
+<!--end certificate-->
+
+{% endblock %}
